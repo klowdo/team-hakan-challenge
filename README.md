@@ -1,5 +1,5 @@
 # Team håkan weekly challenge
-![team hakan](https://raw.githubusercontent.com/klowdo/team-hakan-challenge/master/teamhakan.png)
+![team hakan](https://raw.githubusercontent.com/klowdo/team-hakan-challenge/master/team-hakan.jpg)
 ## Description
 I work at [Collector Bank](http://www.collector.se) were we get weekly coding challenges.
 
