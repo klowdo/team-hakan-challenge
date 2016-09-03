@@ -17,7 +17,7 @@ If you have any sugestions for improvement please contribute or if you have codi
 5. Submit a pull request :D
 
 ## Challanges
-### [V35](./blob/master/v35/kodutmaning_vecka35.pdf)
+### [V35](/v35/kodutmaning_vecka35.pdf)
 Build a customs price calculator with certain constrains
 
 
