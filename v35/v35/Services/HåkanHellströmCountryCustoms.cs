@@ -1,8 +1,9 @@
 ﻿using v35.Interfaces;
+using v35.Models;
 
 namespace v35.Services
 {
-    public class HåkanHellströmCountryCustoms : Customs
+    public class HåkanHellströmCountryCustoms : Mutator<Vehicle, decimal>
     {
         private readonly IDateTime _dateTime;
         private readonly IHoliday _holiday;
@@ -20,27 +21,24 @@ namespace v35.Services
             //2: Om fordonet väger under 1000 kg så ska priset vara 500 SEK
             //4: Om fordonet är en Lastbil gäller inte regel 1 eller 2 utan då är det ett standardpris på 2000 SEK.
             //5: Priset för regel 1 och 2 gäller om fordonet är en personbil.
-            AddRule(new CustomsRule((price, vehicle) =>
+
+            AddMutation((price, vehicle) =>
             {
                 if (vehicle.IsLarge()) return 2000;
                 return vehicle.Weight < 1000 && !vehicle.IsBike() ? 500 : price;
-            }));
+            });
             //3: Om fordonet kör igenom tullen efter klockan 18:00 och innan 06:00 så ska priset vara det ordinarie priset minus 50%. Detta gäller endast veckodagar.
-            AddRule(
-                new CustomsRule(
-                    (price, vehicle) => _dateTime.Now().Hour < 19 && _dateTime.Now().Hour > 6 ? price : price * 0.5m));
+            AddMutation(
+                (price, vehicle) => _dateTime.Now().Hour < 19 && _dateTime.Now().Hour > 6 ? price : price * 0.5m);
             //7: Priserna 1-6 gäller endast veckordagar. Alla helger plus högtider vill gränsvakterna ha dubbelt betalt och därmed ökar priset med 100%.
-            AddRule(
-                new CustomsRule(
-                    (price, vehicle) => _holiday.IsItHoliday() ? price * 2 : price));
+            AddMutation(
+                (price, vehicle) => _holiday.IsItHoliday() ? price * 2 : price);
             //6: Om fordonet är en motorcykel är det priset för regel 1 och 2, minus 30 %.
-            AddRule(
-                new CustomsRule(
-                    (price, vehicle) => vehicle.IsBike() ? price * 0.7m : price));
+            AddMutation(
+                (price, vehicle) => vehicle.IsBike() ? price * 0.7m : price);
             //8: Om fordonet är en miljöbil vilket både lastbil, motorcykel och personbil kan vara så är kostnaden att passera 0 SEK till HåkanHellström - Landet. ¨
-            AddRule(
-                new CustomsRule(
-                    (price, vehicle) => vehicle.IsEnviromentFriendly() ? 0m : price));
+            AddMutation(
+                (price, vehicle) => vehicle.IsEnviromentFriendly() ? 0m : price);
         }
     }
 }

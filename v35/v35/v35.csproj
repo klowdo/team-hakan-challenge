@@ -48,8 +48,7 @@
     <Compile Include="Models\Vehicles\EnviromentFriendlyTruck.cs" />
     <Compile Include="Models\Vehicles\Truck.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\Customs.cs" />
-    <Compile Include="Services\CustomsRule.cs" />
+    <Compile Include="Services\Mutator.cs" />
     <Compile Include="Services\HåkanHellströmCountryCustoms.cs" />
     <Compile Include="Interfaces\IDateTime.cs" />
     <Compile Include="Interfaces\IHoliday.cs" />

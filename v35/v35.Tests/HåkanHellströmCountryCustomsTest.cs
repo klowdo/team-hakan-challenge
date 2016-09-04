@@ -79,7 +79,7 @@ namespace v35.Tests
             bool isItHoliday = false)
         {
             CreateSut(dateTime, isItHoliday)
-                .CalculatePrice(vehicle)
+                .Mutate(vehicle)
                 .Should()
                 .Be(expectedPrice);
         }
