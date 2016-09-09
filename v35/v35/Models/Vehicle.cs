@@ -9,8 +9,6 @@
 
         public decimal Weight { get; private set; }
 
-        public virtual bool IsEnviromentFriendly() => false;
-
         public void RemoveWeight(decimal weight)
         {
             Weight = Weight - weight;
@@ -20,9 +18,5 @@
         {
             Weight = Weight + weight;
         }
-
-        public virtual bool IsLarge() => false;
-
-        public virtual bool IsBike() => false;
     }
 }

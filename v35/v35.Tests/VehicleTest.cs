@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
+using v35.Interfaces;
 using v35.Models.Vehicles;
 
 namespace v35.Tests
@@ -10,14 +11,10 @@ namespace v35.Tests
         public void Overide_Property()
         {
             var car = new Car();
-            car.IsEnviromentFriendly()
-                .Should()
-                .Be(false);
+            car.Should()
+                .NotBeOfType<IEnviromentFriendly>();
             var enviromentFriendlyCar = new EnviromentFriendlyCar();
-            enviromentFriendlyCar
-                .IsEnviromentFriendly()
-                .Should()
-                .Be(true);
+            Assert.IsInstanceOf<IEnviromentFriendly>(enviromentFriendlyCar);
         }
 
         [Test]
@@ -36,36 +33,29 @@ namespace v35.Tests
         public void Car_Is_Not_Bike()
         {
             var car = new Car();
-            car.IsBike()
-                .Should()
-                .Be(false, "Car is not bike");
+            Assert.IsNotInstanceOf<Bike>(car);
         }
 
         [Test]
         public void Bike_Is_Bike()
         {
             var bike = new Bike();
-            bike.IsBike()
-                .Should()
-                .Be(true, "It is a bike");
+            Assert.IsInstanceOf<Bike>(bike);
+            Assert.IsNotAssignableFrom<ILarge>(bike);
         }
 
         [Test]
         public void Truck_Is_Truck()
         {
             var truck = new Truck();
-            truck.IsLarge()
-                .Should()
-                .Be(true, "It is a truck duh");
+            Assert.IsInstanceOf<ILarge>(truck);
         }
 
         [Test]
         public void Car_Is_Not_Truck()
         {
             var car = new Car();
-            car.IsLarge()
-                .Should()
-                .Be(false, "It is not a truck");
+            Assert.IsNotInstanceOf<ILarge>(car);
         }
     }
 }

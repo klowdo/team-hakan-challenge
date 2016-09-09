@@ -40,9 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\Ilarge.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Models\Vehicles\Bike.cs" />
     <Compile Include="Models\Vehicles\Car.cs" />
+    <Compile Include="Interfaces\IEnviromentFriendly.cs" />
     <Compile Include="Models\Vehicles\EnviromentFriendlyBike.cs" />
     <Compile Include="Models\Vehicles\EnviromentFriendlyCar.cs" />
     <Compile Include="Models\Vehicles\EnviromentFriendlyTruck.cs" />

@@ -1,4 +1,4 @@
-﻿namespace v35.Services
+﻿namespace v35.Interfaces
 {
     public interface IHoliday
     {

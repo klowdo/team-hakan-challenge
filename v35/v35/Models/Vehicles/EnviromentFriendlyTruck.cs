@@ -1,7 +1,8 @@
-﻿namespace v35.Models.Vehicles
+﻿using v35.Interfaces;
+
+namespace v35.Models.Vehicles
 {
-    public class EnviromentFriendlyTruck : Truck
+    public class EnviromentFriendlyTruck : Truck, IEnviromentFriendly
     {
-        public override bool IsEnviromentFriendly() => true;
     }
 }

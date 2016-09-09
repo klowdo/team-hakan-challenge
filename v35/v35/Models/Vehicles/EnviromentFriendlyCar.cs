@@ -1,11 +1,8 @@
-﻿namespace v35.Models.Vehicles
-{
-    public class EnviromentFriendlyCar : Vehicle
-    {
-        public EnviromentFriendlyCar() : base(1000m)
-        {
-        }
+﻿using v35.Interfaces;
 
-        public override bool IsEnviromentFriendly() => true;
+namespace v35.Models.Vehicles
+{
+    public class EnviromentFriendlyCar : Car, IEnviromentFriendly
+    {
     }
 }

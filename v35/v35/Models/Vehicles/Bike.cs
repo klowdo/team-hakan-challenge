@@ -5,7 +5,5 @@
         public Bike() : base(250)
         {
         }
-
-        public override bool IsBike() => true;
     }
 }

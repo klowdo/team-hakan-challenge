@@ -1,7 +1,8 @@
-﻿namespace v35.Models.Vehicles
+﻿using v35.Interfaces;
+
+namespace v35.Models.Vehicles
 {
-    public class EnviromentFriendlyBike : Bike
+    public class EnviromentFriendlyBike : Bike, IEnviromentFriendly
     {
-        public override bool IsEnviromentFriendly() => true;
     }
 }
