@@ -3,7 +3,7 @@
 ## Description
 I work at [Collector Bank](http://www.collector.se) were we get weekly coding challenges.
 
-I will publish the challenge and do create my solution.
+I will publish the challenge and also the solutions the entire team comes up with.
 
 As I get better I will try to stick to certain Design patterns depending on the challange.
 
@@ -16,10 +16,9 @@ If you have any sugestions for improvement please contribute or if you have codi
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
-## Challanges
+## Challenges
 ### [V35](/v35/kodutmaning_vecka35.pdf)
-Build a customs price calculator with certain constrains
-
+Build a customs price calculator with certain constrains.
 
 ## Credits
 Klowdo
