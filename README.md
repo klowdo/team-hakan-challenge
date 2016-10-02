@@ -19,6 +19,10 @@ If you have any sugestions for improvement please contribute or if you have codi
 ## Challenges
 ### [V35](/v35/kodutmaning_vecka35.pdf)
 Build a customs price calculator with certain constrains.
+### [V36](/v36/kodutmaning_vecka36.pdf)
+Build a Zoo.
+### [V37](/v37/kodutmaning_vecka36.pdf)
+Build a flight business.
 
 ## Credits
 Klowdo
